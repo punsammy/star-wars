@@ -7,9 +7,11 @@ $(document).ready(function() {
     // data: '',
     dataType: 'json'
   }).done(function(response) {
-    var h1 = "<h1>" + response.results[0].title + "</h1>"
-    console.log(h1);
-    $('body').append(h1);
+    for (var i = 0; i < response.results.length; i++) {
+      var h1 = "<h1>" + response.results[i].title + "</h1>"
+      console.log(h1);
+      $('body').append(h1);
+    }
   });
 
 });
