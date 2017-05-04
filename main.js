@@ -8,11 +8,16 @@ $(document).ready(function() {
     dataType: 'json'
   }).done(function(response) {
     for (var i = 0; i < response.results.length; i++) {
-      var h1 = "<h1>" + response.results[i].title + "</h1>"
+      var h1 = generateH1(response.results[i].title)
       console.log(h1);
       $('body').append(h1);
     }
   });
+
+  function generateH1(data) {
+    var h1 = "<h1>" + data + "</h1>"
+    return h1;
+  }
 
 });
 
@@ -48,4 +53,14 @@ $(document).ready(function() {
 //   var h1 = "<h1>" + response.results[0].title + "</h1>"
 //   console.log(h1);
 //   $('body').append(h1);
+// });
+
+
+// Anonymus Function
+// }).done(function(response) {
+//   for (var i = 0; i < response.results.length; i++) {
+//     var h1 = "<h1>" + response.results[i].title + "</h1>"
+//     console.log(h1);
+//     $('body').append(h1);
+//   }
 // });
